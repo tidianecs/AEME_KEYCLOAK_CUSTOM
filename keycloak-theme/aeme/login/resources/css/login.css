@@ -250,3 +250,52 @@ input[type="submit"]:active,
     text-align: center;
     width: 100%;
 }
+.aeme-field-error {
+    color: #cc0000;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
+
+.aeme-checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.aeme-checkbox-row input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #003366;
+    cursor: pointer;
+}
+
+.aeme-checkbox-label {
+    color: #555;
+    font-size: 13px;
+    font-weight: normal;
+    text-transform: none;
+    letter-spacing: 0;
+    cursor: pointer;
+    margin: 0;
+}
+
+.aeme-btn-secondary {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    color: #003366;
+    border: 2px solid #003366;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+}
+
+.aeme-btn-secondary:hover {
+    background: #f0f4ff;
+}
