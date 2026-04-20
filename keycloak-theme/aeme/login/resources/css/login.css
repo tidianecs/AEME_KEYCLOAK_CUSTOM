@@ -4,46 +4,60 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(135deg, #003366 0%, #005599 50%, #0077cc 100%);
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* ─── Hide ALL Keycloak default elements ─── */
+#kc-header,
+#kc-header-wrapper {
+    display: none !important;
 }
 
-/* ─── Hide Keycloak default header ─── */
-#kc-header {
-    display: none;
+/* ─── Reset body — no blue background ─── */
+body,
+.login-pf,
+html {
+    background: white !important;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 /* ─── Keycloak wrapper overrides ─── */
 #kc-container-wrapper,
-.login-pf-page {
-    width: 100%;
+.login-pf-page,
+.login-pf-page .container,
+.container {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
+    display: flex !important;
+    align-items: stretch !important;
 }
 
 #kc-container,
-.login-pf-page .card-pf {
-    width: 100%;
-    max-width: 100%;
-    border-radius: 0;
-    box-shadow: none;
-    background: transparent;
-    padding: 0;
+.login-pf-page .card-pf,
+.card-pf {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+}
+
+#kc-content,
+#kc-content-wrapper {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
 }
 
 /* ─── MAIN CONTAINER ─── */
 .aeme-container {
-    display: flex;
-    width: 100%;
-    min-height: 100vh;
+    display: flex !important;
+    width: 100% !important;
+    min-height: 100vh !important;
 }
 
 /* ─── LEFT PANEL ─── */
@@ -200,6 +214,8 @@ body {
     font-size: 13px;
     font-weight: 600;
     margin-bottom: 8px;
+    text-transform: none;
+    letter-spacing: 0;
 }
 
 .aeme-field input[type="text"],
