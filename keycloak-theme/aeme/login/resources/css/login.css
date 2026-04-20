@@ -4,16 +4,25 @@
     box-sizing: border-box;
 }
 
-/* ─── Hide ALL Keycloak default elements ─── */
+/* ─── Hide ALL Keycloak default header elements ─── */
 #kc-header,
-#kc-header-wrapper {
+#kc-header-wrapper,
+#kc-header-wrapper *,
+.login-pf-page > header,
+body > header,
+.pf-c-page__header,
+nav.navbar {
     display: none !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 /* ─── Reset body — no blue background ─── */
+html,
 body,
-.login-pf,
-html {
+.login-pf {
     background: white !important;
     min-height: 100vh;
     font-family: 'Segoe UI', Arial, sans-serif;
