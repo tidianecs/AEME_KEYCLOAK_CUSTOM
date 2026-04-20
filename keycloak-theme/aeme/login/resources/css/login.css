@@ -13,164 +13,288 @@ body {
     justify-content: center;
 }
 
+/* ─── Hide Keycloak default header ─── */
 #kc-header {
     display: none;
 }
 
-.login-pf body {
-    background: linear-gradient(135deg, #003366 0%, #005599 50%, #0077cc 100%);
-}
-
-#kc-container-wrapper {
+/* ─── Keycloak wrapper overrides ─── */
+#kc-container-wrapper,
+.login-pf-page {
     width: 100%;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    padding: 20px;
+    padding: 0;
 }
 
-#kc-container {
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
+#kc-container,
+.login-pf-page .card-pf {
     width: 100%;
-    max-width: 440px;
+    max-width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
 }
 
-#kc-header-wrapper {
-    background: #003366;
-    padding: 40px 40px 30px;
-    text-align: center;
+/* ─── MAIN CONTAINER ─── */
+.aeme-container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
 }
 
-#kc-header-wrapper .kc-logo-text {
-    color: white;
-    font-size: 28px;
+/* ─── LEFT PANEL ─── */
+.aeme-left {
+    flex: 1;
+    background: linear-gradient(160deg, #1a4a2e 0%, #2d6a40 40%, #1e5c32 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.aeme-left-content {
+    position: relative;
+    z-index: 2;
+}
+
+.aeme-brand {
+    margin-bottom: 40px;
+}
+
+.aeme-brand-name {
+    color: #f0c040;
+    font-size: 16px;
     font-weight: 700;
-    letter-spacing: 3px;
-    display: block;
-    margin-bottom: 8px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-.kc-subtitle {
-    color: #a0c4ff;
-    font-size: 13px;
-    display: block;
-}
-
-#kc-content {
-    padding: 40px;
-}
-
-#kc-form-wrapper h2,
-.pf-c-title {
-    color: #003366;
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    text-align: center;
-}
-
-.kc-form-subtitle {
-    color: #888;
-    font-size: 13px;
-    text-align: center;
-    margin-bottom: 30px;
-    display: block;
-}
-
-.pf-c-form__group,
-.form-group {
+.aeme-left-title {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.3;
     margin-bottom: 20px;
 }
 
-.pf-c-form__label,
-label {
+.aeme-left-sub {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+.aeme-features {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.aeme-feature {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.aeme-feature-icon {
+    width: 40px;
+    height: 40px;
+    background: #f0c040;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.aeme-feature-icon svg {
+    stroke: #1a4a2e;
+}
+
+/* Decorative circles */
+.aeme-circle-bottom {
+    position: absolute;
+    bottom: -80px;
+    right: -80px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    z-index: 1;
+}
+
+.aeme-circle-top {
+    position: absolute;
+    top: -60px;
+    left: -60px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    z-index: 1;
+}
+
+/* ─── RIGHT PANEL ─── */
+.aeme-right {
+    width: 480px;
+    min-width: 480px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 50px;
+}
+
+.aeme-form-wrapper {
+    width: 100%;
+    max-width: 380px;
+}
+
+/* ─── FORM HEADER ─── */
+.aeme-form-header {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.aeme-lock-icon {
+    width: 64px;
+    height: 64px;
+    background: #f0f4ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.aeme-form-title {
+    color: #1a1a2e;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.aeme-form-sub {
+    color: #888;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* ─── FIELDS ─── */
+.aeme-field {
+    margin-bottom: 20px;
+}
+
+.aeme-field label {
     display: block;
     color: #444;
     font-size: 13px;
     font-weight: 600;
     margin-bottom: 8px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
-.pf-c-form-control,
-input[type="text"],
-input[type="password"],
-input[type="email"] {
+.aeme-field input[type="text"],
+.aeme-field input[type="password"],
+.aeme-field input[type="email"] {
     width: 100%;
-    padding: 12px 16px;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
+    padding: 13px 16px;
+    border: 2px solid #e8e8e8;
+    border-radius: 10px;
     font-size: 15px;
     color: #333;
     background: #fafafa;
-    transition: border-color 0.2s, box-shadow 0.2s;
     outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
 }
 
-.pf-c-form-control:focus,
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="email"]:focus {
-    border-color: #003366;
-    box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
-    background: white;
+.aeme-field input[type="text"]:focus,
+.aeme-field input[type="password"]:focus,
+.aeme-field input[type="email"]:focus {
+    border-color: #2d6a40;
+    box-shadow: 0 0 0 3px rgba(45, 106, 64, 0.12);
+    background: #ffffff;
 }
 
-.pf-c-button[type="submit"],
-input[type="submit"],
-#kc-login {
-    width: 100%;
-    padding: 14px;
-    background: #003366;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.1s;
-    margin-top: 10px;
-    letter-spacing: 0.5px;
-}
-
-.pf-c-button[type="submit"]:hover,
-input[type="submit"]:hover,
-#kc-login:hover {
-    background: #004488;
-    transform: translateY(-1px);
-}
-
-.pf-c-button[type="submit"]:active,
-input[type="submit"]:active,
-#kc-login:active {
-    transform: translateY(0);
-}
-
-#kc-form-options {
+.aeme-field-row {
     display: flex;
-    justify-content: flex-end;
-    margin-bottom: 20px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
 }
 
-#kc-form-options a,
-.kc-forgot-password {
-    color: #003366;
+.aeme-field-row label {
+    margin-bottom: 0;
+}
+
+.aeme-forgot {
+    color: #2d6a40;
     font-size: 13px;
     text-decoration: none;
     font-weight: 500;
 }
 
-#kc-form-options a:hover {
+.aeme-forgot:hover {
     text-decoration: underline;
 }
 
-.alert-error,
-.pf-m-danger {
+/* ─── BUTTON ─── */
+.aeme-btn {
+    width: 100%;
+    padding: 14px;
+    background: #2d6a40;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    margin-top: 8px;
+    letter-spacing: 0.3px;
+}
+
+.aeme-btn:hover {
+    background: #245535;
+    transform: translateY(-1px);
+}
+
+.aeme-btn:active {
+    transform: translateY(0);
+}
+
+.aeme-btn-secondary {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    color: #2d6a40;
+    border: 2px solid #2d6a40;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 10px;
+    letter-spacing: 0.3px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.aeme-btn-secondary:hover {
+    background: #f0f7f2;
+}
+
+/* ─── ERROR ─── */
+.aeme-error {
     background: #fff0f0;
     border: 1px solid #ffcccc;
     border-radius: 8px;
@@ -180,76 +304,6 @@ input[type="submit"]:active,
     font-size: 14px;
 }
 
-.alert-success,
-.pf-m-success {
-    background: #f0fff4;
-    border: 1px solid #ccffcc;
-    border-radius: 8px;
-    padding: 12px 16px;
-    margin-bottom: 20px;
-    color: #006600;
-    font-size: 14px;
-}
-
-.alert-warning {
-    background: #fffbf0;
-    border: 1px solid #ffe0a0;
-    border-radius: 8px;
-    padding: 12px 16px;
-    margin-bottom: 20px;
-    color: #885500;
-    font-size: 14px;
-}
-
-#kc-footer {
-    background: #f8f9fa;
-    padding: 15px;
-    text-align: center;
-    border-top: 1px solid #eee;
-    color: #999;
-    font-size: 12px;
-}
-
-.kc-checkbox {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.kc-checkbox input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    accent-color: #003366;
-}
-
-#kc-info-message {
-    text-align: center;
-    color: #555;
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-.instruction {
-    color: #666;
-    font-size: 14px;
-    margin-bottom: 25px;
-    line-height: 1.6;
-    text-align: center;
-}
-
-.pf-c-button.pf-m-link {
-    background: none;
-    border: none;
-    color: #003366;
-    cursor: pointer;
-    font-size: 14px;
-    text-decoration: underline;
-    padding: 0;
-    margin-top: 15px;
-    display: block;
-    text-align: center;
-    width: 100%;
-}
 .aeme-field-error {
     color: #cc0000;
     font-size: 12px;
@@ -257,6 +311,7 @@ input[type="submit"]:active,
     display: block;
 }
 
+/* ─── CHECKBOX ─── */
 .aeme-checkbox-row {
     display: flex;
     align-items: center;
@@ -267,7 +322,7 @@ input[type="submit"]:active,
 .aeme-checkbox-row input[type="checkbox"] {
     width: 16px;
     height: 16px;
-    accent-color: #003366;
+    accent-color: #2d6a40;
     cursor: pointer;
 }
 
@@ -275,27 +330,28 @@ input[type="submit"]:active,
     color: #555;
     font-size: 13px;
     font-weight: normal;
-    text-transform: none;
-    letter-spacing: 0;
     cursor: pointer;
     margin: 0;
 }
 
-.aeme-btn-secondary {
-    width: 100%;
-    padding: 12px;
-    background: transparent;
-    color: #003366;
-    border: 2px solid #003366;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s;
-    margin-top: 10px;
-    letter-spacing: 0.5px;
+/* ─── FOOTER ─── */
+.aeme-footer {
+    text-align: center;
+    color: #aaa;
+    font-size: 12px;
+    margin-top: 32px;
 }
 
-.aeme-btn-secondary:hover {
-    background: #f0f4ff;
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+    .aeme-left {
+        display: none;
+    }
+
+    .aeme-right {
+        width: 100%;
+        min-width: unset;
+        min-height: 100vh;
+        padding: 40px 24px;
+    }
 }
